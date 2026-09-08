@@ -1,0 +1,2193 @@
+{
+  "formId": "GA-600-2025-R1",
+  "jurisdiction": "GA",
+  "taxYear": 2025,
+  "taxType": "corporate_income_and_net_worth_tax",
+  "formNumber": "600",
+  "formName": "Georgia Corporation Tax Return",
+  "version": "1.0",
+  "revision": "R1",
+  "officialFormUrl": "https://dor.georgia.gov/document/document/2025-600-corporation-income-tax-return-blank-form-printing/download",
+  "officialInstructionsUrl": "https://dor.georgia.gov/document/document/2025-it611-corporate-income-tax-instruction-booklet/download",
+  "lastVerified": "2026-09-04",
+  "verificationStatus": "verified",
+  "sections": [
+    {
+      "sectionId": "600-S1",
+      "sectionName": "Page 1 · Schedule 1 — Georgia Taxable Income",
+      "sectionType": "schedule",
+      "displayOrder": 1,
+      "lines": [
+        {
+          "lineId": "GA-600-2025-S1-L1",
+          "lineNumber": "1",
+          "description": "Federal taxable income (Federal Form 1120, Line 30)",
+          "inputType": "calculated",
+          "reviewable": true,
+          "calculationType": "formula",
+          "formula": {
+            "operation": "link",
+            "dependencies": [
+              "FED-1120-2025-P1-L30"
+            ]
+          }
+        },
+        {
+          "lineId": "GA-600-2025-S1-L2",
+          "lineNumber": "2",
+          "description": "Additions to federal income (Schedule 4, Line 9)",
+          "inputType": "calculated",
+          "reviewable": true,
+          "calculationType": "formula",
+          "formula": {
+            "operation": "link",
+            "dependencies": [
+              "GA-600-2025-S4-L9"
+            ]
+          }
+        },
+        {
+          "lineId": "GA-600-2025-S1-L3",
+          "lineNumber": "3",
+          "description": "Total — Lines 1 and 2",
+          "inputType": "calculated",
+          "reviewable": true,
+          "calculationType": "formula",
+          "formula": {
+            "operation": "add",
+            "dependencies": [
+              "GA-600-2025-S1-L1",
+              "GA-600-2025-S1-L2"
+            ]
+          }
+        },
+        {
+          "lineId": "GA-600-2025-S1-L4",
+          "lineNumber": "4",
+          "description": "Subtractions from federal income (Schedule 5, Line 5)",
+          "inputType": "calculated",
+          "reviewable": true,
+          "calculationType": "formula",
+          "formula": {
+            "operation": "link",
+            "dependencies": [
+              "GA-600-2025-S5-L5"
+            ]
+          }
+        },
+        {
+          "lineId": "GA-600-2025-S1-L5",
+          "lineNumber": "5",
+          "description": "Balance — Line 3 less Line 4",
+          "inputType": "calculated",
+          "reviewable": true,
+          "calculationType": "formula",
+          "formula": {
+            "operation": "subtract",
+            "dependencies": [
+              "GA-600-2025-S1-L3",
+              "GA-600-2025-S1-L4"
+            ]
+          }
+        },
+        {
+          "lineId": "GA-600-2025-S1-L6",
+          "lineNumber": "6",
+          "description": "Georgia net operating loss deduction (Schedule 9, Line 5)",
+          "inputType": "calculated",
+          "reviewable": true,
+          "calculationType": "formula",
+          "formula": {
+            "operation": "link",
+            "dependencies": [
+              "GA-600-2025-S9-L5"
+            ]
+          }
+        },
+        {
+          "lineId": "GA-600-2025-S1-L7",
+          "lineNumber": "7",
+          "description": "Georgia taxable income — Line 5 less Line 6 or Schedule 7, Line 9",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S1-L8",
+          "lineNumber": "8",
+          "description": "Passive loss/capital loss deduction (attach schedule)",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S1-L9",
+          "lineNumber": "9",
+          "description": "Georgia taxable income after passive/capital loss deduction",
+          "inputType": "calculated",
+          "reviewable": true,
+          "calculationType": "formula",
+          "formula": {
+            "operation": "subtract",
+            "dependencies": [
+              "GA-600-2025-S1-L7",
+              "GA-600-2025-S1-L8"
+            ]
+          }
+        },
+        {
+          "lineId": "GA-600-2025-S1-L10",
+          "lineNumber": "10",
+          "description": "Income tax — Line 9 × 5.19%",
+          "inputType": "calculated",
+          "reviewable": true,
+          "calculationType": "formula",
+          "formula": {
+            "operation": "multiply",
+            "dependencies": [
+              "GA-600-2025-S1-L9"
+            ],
+            "factor": 0.0519
+          }
+        }
+      ]
+    },
+    {
+      "sectionId": "600-S2",
+      "sectionName": "Page 1 · Schedule 2 — Net Worth Tax",
+      "sectionType": "schedule",
+      "displayOrder": 2,
+      "lines": [
+        {
+          "lineId": "GA-600-2025-S2-L1",
+          "lineNumber": "1",
+          "description": "Total capital stock issued",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S2-L2",
+          "lineNumber": "2",
+          "description": "Paid-in or capital surplus",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S2-L3",
+          "lineNumber": "3",
+          "description": "Total retained earnings",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S2-L4",
+          "lineNumber": "4",
+          "description": "Net worth — total of Lines 1, 2, and 3",
+          "inputType": "calculated",
+          "reviewable": true,
+          "calculationType": "formula",
+          "formula": {
+            "operation": "add",
+            "dependencies": [
+              "GA-600-2025-S2-L1",
+              "GA-600-2025-S2-L2",
+              "GA-600-2025-S2-L3"
+            ]
+          }
+        },
+        {
+          "lineId": "GA-600-2025-S2-L5",
+          "lineNumber": "5",
+          "description": "Georgia ratio (100% for GA/domesticated foreign; Schedule 8 ratio for foreign corporation)",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S2-L6",
+          "lineNumber": "6",
+          "description": "Net worth taxable by Georgia — Line 4 × Line 5",
+          "inputType": "calculated",
+          "reviewable": true,
+          "calculationType": "formula",
+          "formula": {
+            "operation": "multiply_inputs",
+            "dependencies": [
+              "GA-600-2025-S2-L4",
+              "GA-600-2025-S2-L5"
+            ]
+          }
+        },
+        {
+          "lineId": "GA-600-2025-S2-L7",
+          "lineNumber": "7",
+          "description": "Net worth tax (from official table in instructions)",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        }
+      ]
+    },
+    {
+      "sectionId": "600-S3",
+      "sectionName": "Page 2 · Schedule 3 — Tax Due or Overpayment",
+      "sectionType": "schedule",
+      "displayOrder": 3,
+      "lines": [
+        {
+          "lineId": "GA-600-2025-S3-L1A",
+          "lineNumber": "1A",
+          "description": "Total tax (Schedule 1 Line 10 / Schedule 2 Line 7) — Income Tax",
+          "inputType": "calculated",
+          "reviewable": true,
+          "calculationType": "formula",
+          "formula": {
+            "operation": "link",
+            "dependencies": ["GA-600-2025-S1-L10"]
+          }
+        },
+        {
+          "lineId": "GA-600-2025-S3-L1B",
+          "lineNumber": "1B",
+          "description": "Total tax (Schedule 1 Line 10 / Schedule 2 Line 7) — Net Worth Tax",
+          "inputType": "calculated",
+          "reviewable": true,
+          "calculationType": "formula",
+          "formula": {
+            "operation": "link",
+            "dependencies": ["GA-600-2025-S2-L7"]
+          }
+        },
+        {
+          "lineId": "GA-600-2025-S3-L1C",
+          "lineNumber": "1C",
+          "description": "Total tax (Schedule 1 Line 10 / Schedule 2 Line 7) — Total",
+          "inputType": "calculated",
+          "reviewable": true,
+          "calculationType": "formula",
+          "formula": {
+            "operation": "add",
+            "dependencies": ["GA-600-2025-S3-L1A", "GA-600-2025-S3-L1B"]
+          }
+        },
+        {
+          "lineId": "GA-600-2025-S3-L2A",
+          "lineNumber": "2A",
+          "description": "Credits and estimated tax payments — Income Tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S3-L2B",
+          "lineNumber": "2B",
+          "description": "Credits and estimated tax payments — Net Worth Tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S3-L2C",
+          "lineNumber": "2C",
+          "description": "Credits and estimated tax payments — Total",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S3-L3A",
+          "lineNumber": "3A",
+          "description": "Schedule 10 credits — Income Tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S3-L3B",
+          "lineNumber": "3B",
+          "description": "Schedule 10 credits — Net Worth Tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S3-L3C",
+          "lineNumber": "3C",
+          "description": "Schedule 10 credits — Total",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S3-L4A",
+          "lineNumber": "4A",
+          "description": "Withholding credits (G2-A, G2-LP, G2-RP) — Income Tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S3-L4B",
+          "lineNumber": "4B",
+          "description": "Withholding credits (G2-A, G2-LP, G2-RP) — Net Worth Tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S3-L4C",
+          "lineNumber": "4C",
+          "description": "Withholding credits (G2-A, G2-LP, G2-RP) — Total",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S3-L5A",
+          "lineNumber": "5A",
+          "description": "Schedule 10B refundable credits — Income Tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S3-L5B",
+          "lineNumber": "5B",
+          "description": "Schedule 10B refundable credits — Net Worth Tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S3-L5C",
+          "lineNumber": "5C",
+          "description": "Schedule 10B refundable credits — Total",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S3-L6A",
+          "lineNumber": "6A",
+          "description": "Balance of tax due — Income Tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S3-L6B",
+          "lineNumber": "6B",
+          "description": "Balance of tax due — Net Worth Tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S3-L6C",
+          "lineNumber": "6C",
+          "description": "Balance of tax due — Total",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S3-L7A",
+          "lineNumber": "7A",
+          "description": "Amount of overpayment — Income Tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S3-L7B",
+          "lineNumber": "7B",
+          "description": "Amount of overpayment — Net Worth Tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S3-L7C",
+          "lineNumber": "7C",
+          "description": "Amount of overpayment — Total",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S3-L8A",
+          "lineNumber": "8A",
+          "description": "Interest due — Income Tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S3-L8B",
+          "lineNumber": "8B",
+          "description": "Interest due — Net Worth Tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S3-L8C",
+          "lineNumber": "8C",
+          "description": "Interest due — Total",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S3-L9A",
+          "lineNumber": "9A",
+          "description": "Form 600-UET estimated tax penalty — Income Tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S3-L9B",
+          "lineNumber": "9B",
+          "description": "Form 600-UET estimated tax penalty — Net Worth Tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S3-L9C",
+          "lineNumber": "9C",
+          "description": "Form 600-UET estimated tax penalty — Total",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S3-L10A",
+          "lineNumber": "10A",
+          "description": "Other penalty due — Income Tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S3-L10B",
+          "lineNumber": "10B",
+          "description": "Other penalty due — Net Worth Tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S3-L10C",
+          "lineNumber": "10C",
+          "description": "Other penalty due — Total",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S3-L11A",
+          "lineNumber": "11A",
+          "description": "Amount due — Income Tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S3-L11B",
+          "lineNumber": "11B",
+          "description": "Amount due — Net Worth Tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S3-L11C",
+          "lineNumber": "11C",
+          "description": "Amount due — Total",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S3-L12A",
+          "lineNumber": "12A",
+          "description": "Amount credited to 2026 estimated tax / refund — Income Tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S3-L12B",
+          "lineNumber": "12B",
+          "description": "Amount credited to 2026 estimated tax / refund — Net Worth Tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S3-L12C",
+          "lineNumber": "12C",
+          "description": "Amount credited to 2026 estimated tax / refund — Total",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        }
+      ]
+    },
+    {
+      "sectionId": "600-S4",
+      "sectionName": "Page 2 · Schedule 4 — Additions",
+      "sectionType": "schedule",
+      "displayOrder": 4,
+      "lines": [
+        {
+          "lineId": "GA-600-2025-S4-L1",
+          "lineNumber": "1",
+          "description": "State and municipal bond interest other than Georgia",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S4-L2",
+          "lineNumber": "2",
+          "description": "Net income or net profits taxes imposed outside Georgia",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S4-L3",
+          "lineNumber": "3",
+          "description": "Expense attributable to tax-exempt income",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S4-L4",
+          "lineNumber": "4",
+          "description": "Net operating loss deducted on federal return",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S4-L5",
+          "lineNumber": "5",
+          "description": "Reserved",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S4-L6",
+          "lineNumber": "6",
+          "description": "Intangible expenses and related interest cost",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S4-L7",
+          "lineNumber": "7",
+          "description": "Captive REIT expenses and costs",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S4-L8",
+          "lineNumber": "8",
+          "description": "Other additions (attach schedule)",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S4-L9",
+          "lineNumber": "9",
+          "description": "Total additions — enter on Schedule 1, Line 2",
+          "inputType": "calculated",
+          "reviewable": true,
+          "calculationType": "formula",
+          "formula": {
+            "operation": "add",
+            "dependencies": [
+              "GA-600-2025-S4-L1",
+              "GA-600-2025-S4-L2",
+              "GA-600-2025-S4-L3",
+              "GA-600-2025-S4-L4",
+              "GA-600-2025-S4-L5",
+              "GA-600-2025-S4-L6",
+              "GA-600-2025-S4-L7",
+              "GA-600-2025-S4-L8"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "sectionId": "600-S5",
+      "sectionName": "Page 2 · Schedule 5 — Subtractions",
+      "sectionType": "schedule",
+      "displayOrder": 5,
+      "lines": [
+        {
+          "lineId": "GA-600-2025-S5-L1",
+          "lineNumber": "1",
+          "description": "Interest on obligations of the United States, net of related expense",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S5-L2",
+          "lineNumber": "2",
+          "description": "Exception to intangible expenses and related interest cost (attach IT-Addback)",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S5-L3",
+          "lineNumber": "3",
+          "description": "Exception to captive REIT expenses and costs (attach IT-REIT)",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S5-L4",
+          "lineNumber": "4",
+          "description": "Other subtractions (attach schedule)",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S5-L5",
+          "lineNumber": "5",
+          "description": "Total subtractions — enter on Schedule 1, Line 4",
+          "inputType": "calculated",
+          "reviewable": true,
+          "calculationType": "formula",
+          "formula": {
+            "operation": "add",
+            "dependencies": [
+              "GA-600-2025-S5-L1",
+              "GA-600-2025-S5-L2",
+              "GA-600-2025-S5-L3",
+              "GA-600-2025-S5-L4"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "sectionId": "600-S6",
+      "sectionName": "Page 2 · Schedule 6 — Apportionment of Income",
+      "sectionType": "schedule",
+      "displayOrder": 6,
+      "lines": [
+        {
+          "lineId": "GA-600-2025-S6-L1A",
+          "lineNumber": "1A",
+          "description": "Gross receipts from business — within Georgia",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S6-L1B",
+          "lineNumber": "1B",
+          "description": "Gross receipts from business — everywhere",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S6-L2",
+          "lineNumber": "2",
+          "description": "Georgia ratio — Column A ÷ Column B",
+          "inputType": "calculated",
+          "reviewable": true,
+          "calculationType": "formula",
+          "formula": {
+            "operation": "ratio",
+            "dependencies": [
+              "GA-600-2025-S6-L1A",
+              "GA-600-2025-S6-L1B"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "sectionId": "600-S7",
+      "sectionName": "Page 2 · Schedule 7 — Georgia Net Income",
+      "sectionType": "schedule",
+      "displayOrder": 7,
+      "lines": [
+        {
+          "lineId": "GA-600-2025-S7-L1",
+          "lineNumber": "1",
+          "description": "Net business income (Schedule 1, Line 5)",
+          "inputType": "calculated",
+          "reviewable": true,
+          "calculationType": "formula",
+          "formula": {
+            "operation": "link",
+            "dependencies": [
+              "GA-600-2025-S1-L5"
+            ]
+          }
+        },
+        {
+          "lineId": "GA-600-2025-S7-L2",
+          "lineNumber": "2",
+          "description": "Income allocated everywhere (attach schedule)",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S7-L3",
+          "lineNumber": "3",
+          "description": "Business income subject to apportionment — Line 1 less Line 2",
+          "inputType": "calculated",
+          "reviewable": true,
+          "calculationType": "formula",
+          "formula": {
+            "operation": "subtract",
+            "dependencies": [
+              "GA-600-2025-S7-L1",
+              "GA-600-2025-S7-L2"
+            ]
+          }
+        },
+        {
+          "lineId": "GA-600-2025-S7-L4",
+          "lineNumber": "4",
+          "description": "Georgia ratio (Schedule 6, Line 2)",
+          "inputType": "calculated",
+          "reviewable": true,
+          "calculationType": "formula",
+          "formula": {
+            "operation": "link",
+            "dependencies": [
+              "GA-600-2025-S6-L2"
+            ]
+          }
+        },
+        {
+          "lineId": "GA-600-2025-S7-L5",
+          "lineNumber": "5",
+          "description": "Net business income apportioned to Georgia — Line 3 × Line 4",
+          "inputType": "calculated",
+          "reviewable": true,
+          "calculationType": "formula",
+          "formula": {
+            "operation": "multiply_inputs",
+            "dependencies": [
+              "GA-600-2025-S7-L3",
+              "GA-600-2025-S7-L4"
+            ]
+          }
+        },
+        {
+          "lineId": "GA-600-2025-S7-L6",
+          "lineNumber": "6",
+          "description": "Net income allocated to Georgia (attach schedule)",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S7-L7",
+          "lineNumber": "7",
+          "description": "Total of Lines 5 and 6",
+          "inputType": "calculated",
+          "reviewable": true,
+          "calculationType": "formula",
+          "formula": {
+            "operation": "add",
+            "dependencies": [
+              "GA-600-2025-S7-L5",
+              "GA-600-2025-S7-L6"
+            ]
+          }
+        },
+        {
+          "lineId": "GA-600-2025-S7-L8",
+          "lineNumber": "8",
+          "description": "NOL apportioned to Georgia (Schedule 9)",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S7-L9",
+          "lineNumber": "9",
+          "description": "Georgia taxable income — enter on Schedule 1, Line 7",
+          "inputType": "calculated",
+          "reviewable": true,
+          "calculationType": "formula",
+          "formula": {
+            "operation": "subtract",
+            "dependencies": [
+              "GA-600-2025-S7-L7",
+              "GA-600-2025-S7-L8"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "sectionId": "600-S8",
+      "sectionName": "Page 3 · Schedule 8 — Georgia Net Worth Ratio",
+      "sectionType": "schedule",
+      "displayOrder": 8,
+      "lines": [
+        {
+          "lineId": "GA-600-2025-S8-L1A",
+          "lineNumber": "1A",
+          "description": "Total value of property owned — within Georgia",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S8-L1B",
+          "lineNumber": "1B",
+          "description": "Total value of property owned — everywhere",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S8-L2A",
+          "lineNumber": "2A",
+          "description": "Gross receipts from business — within Georgia",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S8-L2B",
+          "lineNumber": "2B",
+          "description": "Gross receipts from business — everywhere",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S8-L3A",
+          "lineNumber": "3A",
+          "description": "Total — Georgia",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S8-L3B",
+          "lineNumber": "3B",
+          "description": "Total — everywhere",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S8-L4",
+          "lineNumber": "4",
+          "description": "Georgia ratio — Line 3A ÷ Line 3B",
+          "inputType": "calculated",
+          "reviewable": true,
+          "calculationType": "formula",
+          "formula": {
+            "operation": "ratio",
+            "dependencies": [
+              "GA-600-2025-S8-L3A",
+              "GA-600-2025-S8-L3B"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "sectionId": "600-S9",
+      "sectionName": "Page 4 · Schedule 9 — GA NOL Carryforward",
+      "sectionType": "schedule",
+      "displayOrder": 9,
+      "lines": [
+        {
+          "lineId": "GA-600-2025-S9-L1B",
+          "lineNumber": "1B",
+          "description": "Loss row 1 — Loss amount",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L1D",
+          "lineNumber": "1D",
+          "description": "Loss row 1 — NOL utilized",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L1E",
+          "lineNumber": "1E",
+          "description": "Loss row 1 — Balance",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L1F",
+          "lineNumber": "1F",
+          "description": "Loss row 1 — Remaining NOL",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L2B",
+          "lineNumber": "2B",
+          "description": "Loss row 2 — Loss amount",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L2D",
+          "lineNumber": "2D",
+          "description": "Loss row 2 — NOL utilized",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L2E",
+          "lineNumber": "2E",
+          "description": "Loss row 2 — Balance",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L2F",
+          "lineNumber": "2F",
+          "description": "Loss row 2 — Remaining NOL",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L3B",
+          "lineNumber": "3B",
+          "description": "Loss row 3 — Loss amount",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L3D",
+          "lineNumber": "3D",
+          "description": "Loss row 3 — NOL utilized",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L3E",
+          "lineNumber": "3E",
+          "description": "Loss row 3 — Balance",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L3F",
+          "lineNumber": "3F",
+          "description": "Loss row 3 — Remaining NOL",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L4B",
+          "lineNumber": "4B",
+          "description": "Loss row 4 — Loss amount",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L4D",
+          "lineNumber": "4D",
+          "description": "Loss row 4 — NOL utilized",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L4E",
+          "lineNumber": "4E",
+          "description": "Loss row 4 — Balance",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L4F",
+          "lineNumber": "4F",
+          "description": "Loss row 4 — Remaining NOL",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L5B",
+          "lineNumber": "5B",
+          "description": "Loss row 5 — Loss amount",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L5D",
+          "lineNumber": "5D",
+          "description": "Loss row 5 — NOL utilized",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L5E",
+          "lineNumber": "5E",
+          "description": "Loss row 5 — Balance",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L5F",
+          "lineNumber": "5F",
+          "description": "Loss row 5 — Remaining NOL",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L6B",
+          "lineNumber": "6B",
+          "description": "Loss row 6 — Loss amount",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L6D",
+          "lineNumber": "6D",
+          "description": "Loss row 6 — NOL utilized",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L6E",
+          "lineNumber": "6E",
+          "description": "Loss row 6 — Balance",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L6F",
+          "lineNumber": "6F",
+          "description": "Loss row 6 — Remaining NOL",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L7B",
+          "lineNumber": "7B",
+          "description": "Loss row 7 — Loss amount",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L7D",
+          "lineNumber": "7D",
+          "description": "Loss row 7 — NOL utilized",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L7E",
+          "lineNumber": "7E",
+          "description": "Loss row 7 — Balance",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L7F",
+          "lineNumber": "7F",
+          "description": "Loss row 7 — Remaining NOL",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L8B",
+          "lineNumber": "8B",
+          "description": "Loss row 8 — Loss amount",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L8D",
+          "lineNumber": "8D",
+          "description": "Loss row 8 — NOL utilized",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L8E",
+          "lineNumber": "8E",
+          "description": "Loss row 8 — Balance",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L8F",
+          "lineNumber": "8F",
+          "description": "Loss row 8 — Remaining NOL",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L9B",
+          "lineNumber": "9B",
+          "description": "Loss row 9 — Loss amount",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L9D",
+          "lineNumber": "9D",
+          "description": "Loss row 9 — NOL utilized",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L9E",
+          "lineNumber": "9E",
+          "description": "Loss row 9 — Balance",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L9F",
+          "lineNumber": "9F",
+          "description": "Loss row 9 — Remaining NOL",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L10B",
+          "lineNumber": "10B",
+          "description": "Loss row 10 — Loss amount",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L10D",
+          "lineNumber": "10D",
+          "description": "Loss row 10 — NOL utilized",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L10E",
+          "lineNumber": "10E",
+          "description": "Loss row 10 — Balance",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L10F",
+          "lineNumber": "10F",
+          "description": "Loss row 10 — Remaining NOL",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L11B",
+          "lineNumber": "11B",
+          "description": "Loss row 11 — Loss amount",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L11D",
+          "lineNumber": "11D",
+          "description": "Loss row 11 — NOL utilized",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L11E",
+          "lineNumber": "11E",
+          "description": "Loss row 11 — Balance",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L11F",
+          "lineNumber": "11F",
+          "description": "Loss row 11 — Remaining NOL",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L12B",
+          "lineNumber": "12B",
+          "description": "Loss row 12 — Loss amount",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L12D",
+          "lineNumber": "12D",
+          "description": "Loss row 12 — NOL utilized",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L12E",
+          "lineNumber": "12E",
+          "description": "Loss row 12 — Balance",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L12F",
+          "lineNumber": "12F",
+          "description": "Loss row 12 — Remaining NOL",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L13B",
+          "lineNumber": "13B",
+          "description": "Loss row 13 — Loss amount",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L13D",
+          "lineNumber": "13D",
+          "description": "Loss row 13 — NOL utilized",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L13E",
+          "lineNumber": "13E",
+          "description": "Loss row 13 — Balance",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L13F",
+          "lineNumber": "13F",
+          "description": "Loss row 13 — Remaining NOL",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L14B",
+          "lineNumber": "14B",
+          "description": "Loss row 14 — Loss amount",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L14D",
+          "lineNumber": "14D",
+          "description": "Loss row 14 — NOL utilized",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L14E",
+          "lineNumber": "14E",
+          "description": "Loss row 14 — Balance",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L14F",
+          "lineNumber": "14F",
+          "description": "Loss row 14 — Remaining NOL",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L15B",
+          "lineNumber": "15B",
+          "description": "Loss row 15 — Loss amount",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L15D",
+          "lineNumber": "15D",
+          "description": "Loss row 15 — NOL utilized",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L15E",
+          "lineNumber": "15E",
+          "description": "Loss row 15 — Balance",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L15F",
+          "lineNumber": "15F",
+          "description": "Loss row 15 — Remaining NOL",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L16B",
+          "lineNumber": "16B",
+          "description": "Loss row 16 — Loss amount",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L16D",
+          "lineNumber": "16D",
+          "description": "Loss row 16 — NOL utilized",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L16E",
+          "lineNumber": "16E",
+          "description": "Loss row 16 — Balance",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L16F",
+          "lineNumber": "16F",
+          "description": "Loss row 16 — Remaining NOL",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L17B",
+          "lineNumber": "17B",
+          "description": "Loss row 17 — Loss amount",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L17D",
+          "lineNumber": "17D",
+          "description": "Loss row 17 — NOL utilized",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L17E",
+          "lineNumber": "17E",
+          "description": "Loss row 17 — Balance",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L17F",
+          "lineNumber": "17F",
+          "description": "Loss row 17 — Remaining NOL",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L18B",
+          "lineNumber": "18B",
+          "description": "Loss row 18 — Loss amount",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L18D",
+          "lineNumber": "18D",
+          "description": "Loss row 18 — NOL utilized",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L18E",
+          "lineNumber": "18E",
+          "description": "Loss row 18 — Balance",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L18F",
+          "lineNumber": "18F",
+          "description": "Loss row 18 — Remaining NOL",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L19B",
+          "lineNumber": "19B",
+          "description": "Loss row 19 — Loss amount",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L19D",
+          "lineNumber": "19D",
+          "description": "Loss row 19 — NOL utilized",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L19E",
+          "lineNumber": "19E",
+          "description": "Loss row 19 — Balance",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L19F",
+          "lineNumber": "19F",
+          "description": "Loss row 19 — Remaining NOL",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L20B",
+          "lineNumber": "20B",
+          "description": "Loss row 20 — Loss amount",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L20D",
+          "lineNumber": "20D",
+          "description": "Loss row 20 — NOL utilized",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L20E",
+          "lineNumber": "20E",
+          "description": "Loss row 20 — Balance",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L20F",
+          "lineNumber": "20F",
+          "description": "Loss row 20 — Remaining NOL",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L1",
+          "lineNumber": "1",
+          "description": "NOL carryforward available to current year",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L2",
+          "lineNumber": "2",
+          "description": "Current-year income/(loss)",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L3",
+          "lineNumber": "3",
+          "description": "Pre-2018 NOL applied to current year",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L4",
+          "lineNumber": "4",
+          "description": "Post-2017 NOL applied to current year (80% limitation)",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S9-L5",
+          "lineNumber": "5",
+          "description": "Total NOL applied — enter on Schedule 1 Line 6 or Schedule 7 Line 8",
+          "inputType": "calculated",
+          "reviewable": true,
+          "calculationType": "formula",
+          "formula": {
+            "operation": "add",
+            "dependencies": [
+              "GA-600-2025-S9-L3",
+              "GA-600-2025-S9-L4"
+            ]
+          }
+        },
+        {
+          "lineId": "GA-600-2025-S9-L6",
+          "lineNumber": "6",
+          "description": "NOL carryforward available to next year",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        }
+      ]
+    },
+    {
+      "sectionId": "600-S10",
+      "sectionName": "Page 5 · Schedule 10 — Credit Usage and Carryover",
+      "sectionType": "schedule",
+      "displayOrder": 10,
+      "lines": [
+        {
+          "lineId": "GA-600-2025-S10-L1",
+          "lineNumber": "1",
+          "description": "Credit code",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S10-L2",
+          "lineNumber": "2",
+          "description": "Credit remaining from previous years",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S10-L3",
+          "lineNumber": "3",
+          "description": "Credit generated — company entry 1",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S10-L4",
+          "lineNumber": "4",
+          "description": "Credit generated — company entry 2",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S10-L5",
+          "lineNumber": "5",
+          "description": "Credit generated — company entry 3",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S10-L6",
+          "lineNumber": "6",
+          "description": "Credit generated — company entry 4",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S10-L7",
+          "lineNumber": "7",
+          "description": "Credit generated — company entry 5",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S10-L8",
+          "lineNumber": "8",
+          "description": "Credit generated — company entry 6",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S10-L9",
+          "lineNumber": "9",
+          "description": "Credit generated — company entry 7",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S10-L10",
+          "lineNumber": "10",
+          "description": "Total available credit for this tax year",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S10-L11",
+          "lineNumber": "11",
+          "description": "Amount assigned to affiliated entities",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S10-L12",
+          "lineNumber": "12",
+          "description": "Amount of credit sold",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S10-L13",
+          "lineNumber": "13",
+          "description": "Credit used for this tax year",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S10-L14",
+          "lineNumber": "14",
+          "description": "Potential carryover to next tax year",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        }
+      ]
+    },
+    {
+      "sectionId": "600-S10B",
+      "sectionName": "Page 6 · Schedule 10B — Refundable Tax Credits",
+      "sectionType": "schedule",
+      "displayOrder": 11,
+      "lines": [
+        {
+          "lineId": "GA-600-2025-S10B-L1",
+          "lineNumber": "1",
+          "description": "Credit code",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S10B-L2",
+          "lineNumber": "2",
+          "description": "Credit remaining from previous years",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S10B-L3",
+          "lineNumber": "3",
+          "description": "Credit generated — company entry 1",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S10B-L4",
+          "lineNumber": "4",
+          "description": "Credit generated — company entry 2",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S10B-L5",
+          "lineNumber": "5",
+          "description": "Credit generated — company entry 3",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S10B-L6",
+          "lineNumber": "6",
+          "description": "Credit generated — company entry 4",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S10B-L7",
+          "lineNumber": "7",
+          "description": "Credit generated — company entry 5",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S10B-L8",
+          "lineNumber": "8",
+          "description": "Credit generated — company entry 6",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S10B-L9",
+          "lineNumber": "9",
+          "description": "Credit generated — company entry 7",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S10B-L10",
+          "lineNumber": "10",
+          "description": "Total available credit for this tax year",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S10B-L11",
+          "lineNumber": "11",
+          "description": "Amount assigned to affiliated entities",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S10B-L12",
+          "lineNumber": "12",
+          "description": "Amount of credit sold",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S10B-L13",
+          "lineNumber": "13",
+          "description": "Credit used for this tax year",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S10B-L14",
+          "lineNumber": "14",
+          "description": "Potential carryover to next tax year",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        }
+      ]
+    },
+    {
+      "sectionId": "600-S11",
+      "sectionName": "Page 7 · Schedule 11 — Assigned Tax Credits",
+      "sectionType": "schedule",
+      "displayOrder": 12,
+      "lines": [
+        {
+          "lineId": "GA-600-2025-S11-L1",
+          "lineNumber": "1",
+          "description": "Assigned tax credit — affiliate entry 1",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S11-L2",
+          "lineNumber": "2",
+          "description": "Assigned tax credit — affiliate entry 2",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S11-L3",
+          "lineNumber": "3",
+          "description": "Assigned tax credit — affiliate entry 3",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S11-L4",
+          "lineNumber": "4",
+          "description": "Assigned tax credit — affiliate entry 4",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S11-L5",
+          "lineNumber": "5",
+          "description": "Assigned tax credit — affiliate entry 5",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S11-L6",
+          "lineNumber": "6",
+          "description": "Assigned tax credit — affiliate entry 6",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S11-L7",
+          "lineNumber": "7",
+          "description": "Assigned tax credit — affiliate entry 7",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S11-L8",
+          "lineNumber": "8",
+          "description": "Assigned tax credit — affiliate entry 8",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        }
+      ]
+    },
+    {
+      "sectionId": "600-S12",
+      "sectionName": "Page 8 · Schedule 12 — Georgia Consolidated Group",
+      "sectionType": "schedule",
+      "displayOrder": 13,
+      "lines": [
+        {
+          "lineId": "GA-600-2025-S12-L1",
+          "lineNumber": "1",
+          "description": "Member 1 net worth tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S12-L2",
+          "lineNumber": "2",
+          "description": "Member 2 net worth tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S12-L3",
+          "lineNumber": "3",
+          "description": "Member 3 net worth tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S12-L4",
+          "lineNumber": "4",
+          "description": "Member 4 net worth tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S12-L5",
+          "lineNumber": "5",
+          "description": "Member 5 net worth tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S12-L6",
+          "lineNumber": "6",
+          "description": "Member 6 net worth tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S12-L7",
+          "lineNumber": "7",
+          "description": "Member 7 net worth tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S12-L8",
+          "lineNumber": "8",
+          "description": "Member 8 net worth tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S12-L9",
+          "lineNumber": "9",
+          "description": "Member 9 net worth tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S12-L10",
+          "lineNumber": "10",
+          "description": "Member 10 net worth tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S12-L11",
+          "lineNumber": "11",
+          "description": "Member 11 net worth tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S12-L12",
+          "lineNumber": "12",
+          "description": "Member 12 net worth tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S12-L13",
+          "lineNumber": "13",
+          "description": "Member 13 net worth tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S12-L14",
+          "lineNumber": "14",
+          "description": "Member 14 net worth tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S12-L15",
+          "lineNumber": "15",
+          "description": "Member 15 net worth tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S12-L16",
+          "lineNumber": "16",
+          "description": "Member 16 net worth tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S12-L17",
+          "lineNumber": "17",
+          "description": "Member 17 net worth tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S12-L18",
+          "lineNumber": "18",
+          "description": "Member 18 net worth tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S12-L19",
+          "lineNumber": "19",
+          "description": "Member 19 net worth tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S12-L20",
+          "lineNumber": "20",
+          "description": "Member 20 net worth tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S12-L21",
+          "lineNumber": "21",
+          "description": "Member 21 net worth tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S12-L22",
+          "lineNumber": "22",
+          "description": "Member 22 net worth tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S12-L23",
+          "lineNumber": "23",
+          "description": "Member 23 net worth tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S12-L24",
+          "lineNumber": "24",
+          "description": "Member 24 net worth tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S12-L25",
+          "lineNumber": "25",
+          "description": "Member 25 net worth tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S12-L26",
+          "lineNumber": "26",
+          "description": "Member 26 net worth tax",
+          "inputType": "currency",
+          "reviewable": true,
+          "calculationType": "manual"
+        },
+        {
+          "lineId": "GA-600-2025-S12-L27",
+          "lineNumber": "27",
+          "description": "Total net worth tax — Lines 1 through 26",
+          "inputType": "calculated",
+          "reviewable": true,
+          "calculationType": "formula",
+          "formula": {
+            "operation": "add",
+            "dependencies": [
+              "GA-600-2025-S12-L1",
+              "GA-600-2025-S12-L2",
+              "GA-600-2025-S12-L3",
+              "GA-600-2025-S12-L4",
+              "GA-600-2025-S12-L5",
+              "GA-600-2025-S12-L6",
+              "GA-600-2025-S12-L7",
+              "GA-600-2025-S12-L8",
+              "GA-600-2025-S12-L9",
+              "GA-600-2025-S12-L10",
+              "GA-600-2025-S12-L11",
+              "GA-600-2025-S12-L12",
+              "GA-600-2025-S12-L13",
+              "GA-600-2025-S12-L14",
+              "GA-600-2025-S12-L15",
+              "GA-600-2025-S12-L16",
+              "GA-600-2025-S12-L17",
+              "GA-600-2025-S12-L18",
+              "GA-600-2025-S12-L19",
+              "GA-600-2025-S12-L20",
+              "GA-600-2025-S12-L21",
+              "GA-600-2025-S12-L22",
+              "GA-600-2025-S12-L23",
+              "GA-600-2025-S12-L24",
+              "GA-600-2025-S12-L25",
+              "GA-600-2025-S12-L26"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
