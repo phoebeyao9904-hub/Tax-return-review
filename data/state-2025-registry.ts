@@ -71,7 +71,7 @@ const throwback = new Set("AK AR CA CO DC HI ID IL KS MA MS MT NH NM ND OK OR UT
 const exact = new Set("AL AR CA DC FL GA IL IN NJ NY OR TX".split(" "));
 const minimum: Record<string,string> = { CA:"$800 minimum franchise tax",CT:"$250 minimum tax",DC:"$250 / $1,000 gross-receipts minimum",MA:"$456 minimum excise",NJ:"$500–$2,000 gross-receipts minimum",NY:"$25–$200,000 fixed-dollar minimum" };
 const specialTax: Record<string,string> = { DE:"Gross Receipts Tax",NV:"Commerce Tax",OH:"Commercial Activity Tax (CAT)",OR:"Corporate Activity Tax (CAT)",TX:"Franchise (margin) tax",WA:"Business & Occupation Tax (B&O)" };
-const threshold: Record<string,number> = { AL:500000,CO:500000,HI:100000,MA:500000,MI:350000,NY:1000000,OH:500000,PA:500000,TN:500000,TX:500000,WA:100000 };
+const threshold: Record<string,number> = { AL:675000,CO:500000,HI:100000,MA:500000,MI:350000,NY:1000000,OH:500000,PA:500000,TN:500000,TX:500000,WA:100000 };
 const exactLines: Record<string,string[]> = {
   AL:["Form 20C Line 1 · federal taxable income","Form 20C Lines 2–5 · Alabama additions and subtractions","Schedule D-1 · apportionment factors","Form 20C Lines 17–18 · Alabama taxable income and tax","Form 20C Lines 19–22 · payments and balance"],
   AR:["AR1100CT Line 1 · federal taxable income","AR1100CT Lines 2–7 · Arkansas adjustments","Schedule A · apportionment","AR1100CT Lines 21–22 · Arkansas taxable income and tax","AR1100CT Lines 23–31 · credits, payments and balance"],

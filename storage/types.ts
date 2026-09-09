@@ -1,5 +1,5 @@
 export const WORKSPACE_SCHEMA_VERSION = "1.0";
-export const APP_VERSION = "v18";
+export const APP_VERSION = "v23";
 
 export type WorkspaceMetadata = {
   workspaceId: string;

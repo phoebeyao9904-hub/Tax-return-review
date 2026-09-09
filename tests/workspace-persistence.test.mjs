@@ -19,19 +19,19 @@ class MemoryProvider {
 test("workspace service isolates entity, year, and jurisdiction records",async()=>{
   const [{WorkspaceRepository},{WorkspaceService}]=await Promise.all([vite.ssrLoadModule("/repositories/workspace-repository.ts"),vite.ssrLoadModule("/services/workspace-service.ts")]);
   const provider=new MemoryProvider(); const service=new WorkspaceService(new WorkspaceRepository(provider));
-  const federal=service.createDocument({value:1120},{workspaceId:"ha-2025-fed",entityId:"HA",taxYear:2025,jurisdiction:"Federal",returnType:"Form 1120"});
-  const georgia=service.createDocument({value:600},{workspaceId:"ha-2025-ga",entityId:"HA",taxYear:2025,jurisdiction:"Georgia",returnType:"Form 600"});
-  const prior=service.createDocument({value:2024},{workspaceId:"ha-2024-fed",entityId:"HA",taxYear:2024,jurisdiction:"Federal",returnType:"Form 1120"});
+  const federal=service.createDocument({value:1120},{workspaceId:"entity-2025-fed",entityId:"Entity A",taxYear:2025,jurisdiction:"Federal",returnType:"Form 1120"});
+  const georgia=service.createDocument({value:600},{workspaceId:"entity-2025-ga",entityId:"Entity A",taxYear:2025,jurisdiction:"Georgia",returnType:"Form 600"});
+  const prior=service.createDocument({value:2024},{workspaceId:"entity-2024-fed",entityId:"Entity A",taxYear:2024,jurisdiction:"Federal",returnType:"Form 1120"});
   await service.createWorkspace(federal); await service.createWorkspace(georgia); await service.createWorkspace(prior);
-  assert.equal((await service.getWorkspace("ha-2025-fed")).data.value,1120);
-  assert.equal((await service.getWorkspace("ha-2025-ga")).data.value,600);
-  assert.equal((await service.getWorkspace("ha-2024-fed")).data.value,2024);
+  assert.equal((await service.getWorkspace("entity-2025-fed")).data.value,1120);
+  assert.equal((await service.getWorkspace("entity-2025-ga")).data.value,600);
+  assert.equal((await service.getWorkspace("entity-2024-fed")).data.value,2024);
 });
 
 test("backup round-trip preserves data and validates schema",async()=>{
   const [{WorkspaceRepository},{WorkspaceService}]=await Promise.all([vite.ssrLoadModule("/repositories/workspace-repository.ts"),vite.ssrLoadModule("/services/workspace-service.ts")]);
   const service=new WorkspaceService(new WorkspaceRepository(new MemoryProvider()));
-  const document=service.createDocument({notes:"keep me",completeness:{received:true}},{workspaceId:"backup",entityId:"HA",taxYear:2025,jurisdiction:"Federal",returnType:"Form 1120"});
+  const document=service.createDocument({notes:"keep me",completeness:{received:true}},{workspaceId:"backup",entityId:"Entity A",taxYear:2025,jurisdiction:"Federal",returnType:"Form 1120"});
   const restored=service.importWorkspace(JSON.parse(JSON.stringify(service.exportWorkspace(document))));
   assert.deepEqual(restored.data,document.data);
   assert.throws(()=>service.importWorkspace({schemaVersion:"0.1",workspace:document}),/Unsupported backup schema/);
@@ -39,10 +39,10 @@ test("backup round-trip preserves data and validates schema",async()=>{
 
 test("migration fills collaboration metadata and write failures are observable",async()=>{
   const [{WorkspaceRepository},{WorkspaceService},{migrateWorkspaceData}]=await Promise.all([vite.ssrLoadModule("/repositories/workspace-repository.ts"),vite.ssrLoadModule("/services/workspace-service.ts"),vite.ssrLoadModule("/services/workspace-migrations.ts")]);
-  const migrated=migrateWorkspaceData({schemaVersion:"1.0",appVersion:"v18",metadata:{workspaceId:"migrate",entityId:"HA",taxYear:2025},data:{ok:true}});
+  const migrated=migrateWorkspaceData({schemaVersion:"1.0",appVersion:"v18",metadata:{workspaceId:"migrate",entityId:"Entity A",taxYear:2025},data:{ok:true}});
   assert.equal(migrated.metadata.createdBy,"local-user"); assert.equal(migrated.metadata.revision,1);
   const provider=new MemoryProvider(); provider.failWrites=true;
   const service=new WorkspaceService(new WorkspaceRepository(provider));
-  const document=service.createDocument({value:1},{workspaceId:"fail",entityId:"HA",taxYear:2025});
+  const document=service.createDocument({value:1},{workspaceId:"fail",entityId:"Entity A",taxYear:2025});
   await assert.rejects(service.saveWorkspace(document),/simulated write failure/);
 });

@@ -1,4 +1,4 @@
-# HA Tax Return Review
+# Tax Return Review
 
 Internal corporate income tax review workspace for independently reviewing federal and state returns, tracing source data, documenting book-to-tax differences, checking federal form completeness, and preparing questions for the tax firm.
 
@@ -38,7 +38,7 @@ LocalStorage is used only for the most recently opened workspace ID and one-time
 
 ## Workspace Storage
 
-IndexedDB database: `ha-tax-return-review`
+IndexedDB database: browser-local workspace storage (legacy identifier retained in code for existing-data compatibility)
 
 Object store: `workspaces`
 

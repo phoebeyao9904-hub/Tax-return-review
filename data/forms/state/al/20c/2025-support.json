@@ -1,0 +1,58 @@
+{
+  "sections": [
+    {
+      "sectionId": "20C-SB",
+      "sectionName": "Embedded Schedule B — Alabama NOL",
+      "sectionType": "schedule",
+      "displayOrder": 8,
+      "lines": [
+        {"lineId":"AL-20C-2025-SB-AVAILABLE","lineNumber":"Total","description":"Alabama NOL available before current-year utilization","inputType":"currency","reviewable":true,"calculationType":"manual"},
+        {"lineId":"AL-20C-2025-SB-DEDUCTION","lineNumber":"Deduction","description":"Alabama NOL utilized in the current year — carry to Form 20C Line 13","inputType":"currency","reviewable":true,"calculationType":"manual"},
+        {"lineId":"AL-20C-2025-SB-ENDING","lineNumber":"Ending","description":"Alabama NOL carryforward after current-year utilization","inputType":"calculated","reviewable":true,"calculationType":"formula","formula":{"operation":"subtract","dependencies":["AL-20C-2025-SB-AVAILABLE","AL-20C-2025-SB-DEDUCTION"]}}
+      ]
+    },
+    {
+      "sectionId": "20C-BC",
+      "sectionName": "Conditional Schedule BC — Alabama Business Credits",
+      "formNumber": "Schedule BC",
+      "formTitle": "Alabama Business Credits",
+      "officialFormUrl": "https://www.revenue.alabama.gov/forms/",
+      "officialInstructionsUrl": "https://www.revenue.alabama.gov/wp-content/uploads/2026/01/25f20cinstr.pdf",
+      "sectionType": "attachment",
+      "displayOrder": 9,
+      "lines": [
+        {"lineId":"AL-20C-2025-BC-E3","lineNumber":"E3","description":"Total nonrefundable credits / exemptions — carry to Form 20C Line 18","inputType":"currency","reviewable":true,"calculationType":"manual"},
+        {"lineId":"AL-20C-2025-BC-F5","lineNumber":"F5","description":"Total refundable credits — carry to Form 20C Line 20f","inputType":"currency","reviewable":true,"calculationType":"manual"},
+        {"lineId":"AL-20C-2025-BC-CARRY-TOTAL","lineNumber":"Control","description":"Schedule BC credits carried to Form 20C Lines 18 and 20f","inputType":"calculated","reviewable":true,"calculationType":"formula","formula":{"operation":"add","dependencies":["AL-20C-2025-P1-L18","AL-20C-2025-P1-L20F"]}}
+      ]
+    },
+    {
+      "sectionId": "20C-CPB",
+      "sectionName": "Conditional Schedule CP-B — Composite / Electing PTE Credits",
+      "formNumber": "Schedule CP-B",
+      "formTitle": "Composite Payments and Electing Pass-Through Entity Credits",
+      "officialFormUrl": "https://www.revenue.alabama.gov/forms/",
+      "officialInstructionsUrl": "https://www.revenue.alabama.gov/wp-content/uploads/2026/01/25f20cinstr.pdf",
+      "sectionType": "attachment",
+      "displayOrder": 10,
+      "lines": [
+        {"lineId":"AL-20C-2025-CPB-L3","lineNumber":"3","description":"Total composite payments and Electing PTE credits — carry to Form 20C Line 20c","inputType":"currency","reviewable":true,"calculationType":"manual"}
+      ]
+    },
+    {
+      "sectionId": "20C-AB",
+      "sectionName": "Conditional Schedule AB — Related-member Add-back",
+      "formNumber": "Schedule AB",
+      "formTitle": "Related-member Interest and Intangible Expense Add-back",
+      "officialFormUrl": "https://www.revenue.alabama.gov/forms/",
+      "officialInstructionsUrl": "https://www.revenue.alabama.gov/wp-content/uploads/2026/01/25f20cinstr.pdf",
+      "sectionType": "attachment",
+      "displayOrder": 11,
+      "lines": [
+        {"lineId":"AL-20C-2025-AB-L14","lineNumber":"14","description":"Total intangible / interest expenses paid to related members","inputType":"currency","reviewable":true,"calculationType":"manual"},
+        {"lineId":"AL-20C-2025-AB-L15","lineNumber":"15","description":"Total exempt amount under applicable exception","inputType":"currency","reviewable":true,"calculationType":"manual"},
+        {"lineId":"AL-20C-2025-AB-ADDBACK","lineNumber":"Control","description":"Net related-member add-back — Schedule AB Lines 14 less 15","inputType":"calculated","reviewable":true,"calculationType":"formula","formula":{"operation":"subtract","dependencies":["AL-20C-2025-AB-L14","AL-20C-2025-AB-L15"]}}
+      ]
+    }
+  ]
+}

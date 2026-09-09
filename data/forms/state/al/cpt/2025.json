@@ -1,0 +1,51 @@
+{
+  "formId":"AL-CPT-2025-R1","jurisdiction":"AL","taxYear":2025,"taxType":"business_privilege_tax","formNumber":"CPT","formName":"Alabama Business Privilege Tax Return","agency":"Alabama Department of Revenue","version":"1.0","revision":"R1","officialFormUrl":"https://www.revenue.alabama.gov/wp-content/uploads/2025/02/25fcpt.pdf","officialInstructionsUrl":"https://www.revenue.alabama.gov/forms/alabama-business-privilege-tax-return-and-annual-report-for-c-corporations-and-other-specified-entities-instruction/","lastVerified":"2026-09-09","verificationStatus":"verified",
+  "sections":[
+    {"sectionId":"CPT-P1","sectionName":"Form CPT · Page 1 — Amount Due or Refund","sectionType":"page","displayOrder":1,"lines":[
+      {"lineId":"AL-CPT-2025-P1-L5","lineNumber":"5","description":"Privilege tax due — Page 2, Part B, Line 20","inputType":"calculated","reviewable":true,"calculationType":"formula","formula":{"operation":"link","dependencies":["AL-CPT-2025-P2B-L20"]}},
+      {"lineId":"AL-CPT-2025-P1-L6","lineNumber":"6","description":"Privilege tax previously paid for the taxable year","inputType":"currency","reviewable":true,"calculationType":"manual"},
+      {"lineId":"AL-CPT-2025-P1-L7","lineNumber":"7","description":"Net privilege tax due — Line 5 less Line 6","inputType":"calculated","reviewable":true,"calculationType":"formula","formula":{"operation":"subtract","dependencies":["AL-CPT-2025-P1-L5","AL-CPT-2025-P1-L6"]}},
+      {"lineId":"AL-CPT-2025-P1-L8","lineNumber":"8","description":"Penalty due","inputType":"currency","reviewable":true,"calculationType":"manual"},
+      {"lineId":"AL-CPT-2025-P1-L9","lineNumber":"9","description":"Interest due","inputType":"currency","reviewable":true,"calculationType":"manual"},
+      {"lineId":"AL-CPT-2025-P1-L10","lineNumber":"10","description":"Total privilege tax due — Lines 7, 8 and 9","inputType":"calculated","reviewable":true,"calculationType":"formula","formula":{"operation":"add","dependencies":["AL-CPT-2025-P1-L7","AL-CPT-2025-P1-L8","AL-CPT-2025-P1-L9"]}},
+      {"lineId":"AL-CPT-2025-P1-L11","lineNumber":"11","description":"Payment due with return if Line 10 is positive","inputType":"currency","reviewable":true,"calculationType":"manual"},
+      {"lineId":"AL-CPT-2025-P1-L12","lineNumber":"12","description":"Amount to be refunded if Line 10 is negative","inputType":"currency","reviewable":true,"calculationType":"manual"}
+    ]},
+    {"sectionId":"CPT-P2A","sectionName":"Form CPT · Page 2 Part A — Net Worth Computation","sectionType":"schedule","displayOrder":2,"lines":[
+      {"lineId":"AL-CPT-2025-P2A-L1","lineNumber":"1","description":"Issued capital stock and additional paid-in capital","inputType":"currency","reviewable":true,"calculationType":"manual"},
+      {"lineId":"AL-CPT-2025-P2A-L2","lineNumber":"2","description":"Retained earnings including dividends payable","inputType":"currency","reviewable":true,"calculationType":"manual"},
+      {"lineId":"AL-CPT-2025-P2A-L3","lineNumber":"3","description":"Related-party debt exceeding Lines 1 and 2","inputType":"currency","reviewable":true,"calculationType":"manual"},
+      {"lineId":"AL-CPT-2025-P2A-L4","lineNumber":"4","description":"Compensation or similar payments in excess of $500,000","inputType":"currency","reviewable":true,"calculationType":"manual"},
+      {"lineId":"AL-CPT-2025-P2A-L5","lineNumber":"5","description":"Total net worth — Lines 1 through 4","inputType":"calculated","reviewable":true,"calculationType":"formula","formula":{"operation":"add","dependencies":["AL-CPT-2025-P2A-L1","AL-CPT-2025-P2A-L2","AL-CPT-2025-P2A-L3","AL-CPT-2025-P2A-L4"]}}
+    ]},
+    {"sectionId":"CPT-P2B","sectionName":"Form CPT · Page 2 Part B — Privilege Tax","sectionType":"schedule","displayOrder":3,"lines":[
+      {"lineId":"AL-CPT-2025-P2B-L1","lineNumber":"1","description":"Total net worth from Part A, Line 5","inputType":"calculated","reviewable":true,"calculationType":"formula","formula":{"operation":"link","dependencies":["AL-CPT-2025-P2A-L5"]}},
+      {"lineId":"AL-CPT-2025-P2B-L2","lineNumber":"2","description":"Investment in equity of other taxpayers","inputType":"currency","reviewable":true,"calculationType":"manual"},
+      {"lineId":"AL-CPT-2025-P2B-L3","lineNumber":"3","description":"Financial institution qualifying investments","inputType":"currency","reviewable":true,"calculationType":"manual"},
+      {"lineId":"AL-CPT-2025-P2B-L4","lineNumber":"4","description":"Unamortized goodwill and core deposit intangibles","inputType":"currency","reviewable":true,"calculationType":"manual"},
+      {"lineId":"AL-CPT-2025-P2B-L5","lineNumber":"5","description":"Elected post-retirement benefits under FASB 106","inputType":"currency","reviewable":true,"calculationType":"manual"},
+      {"lineId":"AL-CPT-2025-P2B-L6","lineNumber":"6","description":"Financial institution six-percent asset limitation exclusion","inputType":"currency","reviewable":true,"calculationType":"manual"},
+      {"lineId":"AL-CPT-2025-P2B-L7","lineNumber":"7","description":"Total exclusions — Lines 2 through 6","inputType":"calculated","reviewable":true,"calculationType":"formula","formula":{"operation":"add","dependencies":["AL-CPT-2025-P2B-L2","AL-CPT-2025-P2B-L3","AL-CPT-2025-P2B-L4","AL-CPT-2025-P2B-L5","AL-CPT-2025-P2B-L6"]}},
+      {"lineId":"AL-CPT-2025-P2B-L8","lineNumber":"8","description":"Net worth subject to apportionment — Line 1 less Line 7","inputType":"calculated","reviewable":true,"calculationType":"formula","formula":{"operation":"subtract","dependencies":["AL-CPT-2025-P2B-L1","AL-CPT-2025-P2B-L7"]}},
+      {"lineId":"AL-CPT-2025-P2B-L9","lineNumber":"9","description":"Alabama apportionment factor","inputType":"percentage","reviewable":true,"calculationType":"manual"},
+      {"lineId":"AL-CPT-2025-P2B-L10","lineNumber":"10","description":"Total Alabama net worth — Line 8 × Line 9","inputType":"calculated","reviewable":true,"calculationType":"formula","formula":{"operation":"multiply_inputs","dependencies":["AL-CPT-2025-P2B-L8","AL-CPT-2025-P2B-L9"]}},
+      {"lineId":"AL-CPT-2025-P2B-L11","lineNumber":"11","description":"Qualifying Alabama bonds and securities deduction","inputType":"currency","reviewable":true,"calculationType":"manual"},
+      {"lineId":"AL-CPT-2025-P2B-L12","lineNumber":"12","description":"Alabama pollution-control devices deduction","inputType":"currency","reviewable":true,"calculationType":"manual"},
+      {"lineId":"AL-CPT-2025-P2B-L13","lineNumber":"13","description":"Qualifying reclamation and retirement reserves","inputType":"currency","reviewable":true,"calculationType":"manual"},
+      {"lineId":"AL-CPT-2025-P2B-L14","lineNumber":"14","description":"Qualifying low-income housing investment deduction","inputType":"currency","reviewable":true,"calculationType":"manual"},
+      {"lineId":"AL-CPT-2025-P2B-L15","lineNumber":"15","description":"Total deductions — Lines 11 through 14","inputType":"calculated","reviewable":true,"calculationType":"formula","formula":{"operation":"add","dependencies":["AL-CPT-2025-P2B-L11","AL-CPT-2025-P2B-L12","AL-CPT-2025-P2B-L13","AL-CPT-2025-P2B-L14"]}},
+      {"lineId":"AL-CPT-2025-P2B-L16","lineNumber":"16","description":"Taxable Alabama net worth — Line 10 less Line 15","inputType":"calculated","reviewable":true,"calculationType":"formula","formula":{"operation":"subtract","dependencies":["AL-CPT-2025-P2B-L10","AL-CPT-2025-P2B-L15"]}},
+      {"lineId":"AL-CPT-2025-P2B-L17A","lineNumber":"17a","description":"Federal taxable income apportioned to Alabama","inputType":"currency","reviewable":true,"calculationType":"manual"},
+      {"lineId":"AL-CPT-2025-P2B-L17B","lineNumber":"17b","description":"Privilege tax rate from statutory rate table","inputType":"percentage","reviewable":true,"calculationType":"manual"},
+      {"lineId":"AL-CPT-2025-P2B-L18","lineNumber":"18","description":"Gross privilege tax — Line 16 × Line 17b","inputType":"calculated","reviewable":true,"calculationType":"formula","formula":{"operation":"multiply_inputs","dependencies":["AL-CPT-2025-P2B-L16","AL-CPT-2025-P2B-L17B"]}},
+      {"lineId":"AL-CPT-2025-P2B-L19","lineNumber":"19","description":"Alabama enterprise zone credit","inputType":"currency","reviewable":true,"calculationType":"manual"},
+      {"lineId":"AL-CPT-2025-P2B-L20","lineNumber":"20","description":"Privilege tax due — Line 18 less Line 19; $100 exemption test applies","inputType":"calculated","reviewable":true,"calculationType":"formula","formula":{"operation":"subtract_floor_zero","dependencies":["AL-CPT-2025-P2B-L18","AL-CPT-2025-P2B-L19"]}}
+    ]},
+    {"sectionId":"CPT-BPTNW","sectionName":"Embedded Worksheet BPT-NW — Balance Sheet / Net Worth","sectionType":"worksheet","displayOrder":4,"lines":[
+      {"lineId":"AL-CPT-2025-NW-L16","lineNumber":"16","description":"Total assets — Worksheet BPT-NW","inputType":"currency","reviewable":true,"calculationType":"manual"},
+      {"lineId":"AL-CPT-2025-NW-L25","lineNumber":"25","description":"Total liabilities — Worksheet BPT-NW","inputType":"currency","reviewable":true,"calculationType":"manual"},
+      {"lineId":"AL-CPT-2025-NW-L32","lineNumber":"32","description":"Total capital — Worksheet BPT-NW","inputType":"currency","reviewable":true,"calculationType":"manual"},
+      {"lineId":"AL-CPT-2025-NW-L34","lineNumber":"34","description":"Total liabilities and capital — Worksheet BPT-NW","inputType":"calculated","reviewable":true,"calculationType":"formula","formula":{"operation":"add","dependencies":["AL-CPT-2025-NW-L25","AL-CPT-2025-NW-L32"]}}
+    ]}
+  ]
+}
